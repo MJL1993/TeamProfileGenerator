@@ -7,3 +7,5 @@ This application allows the user to input employee information into the terminal
 - Manager
 - Engineer
 - Intern
+
+![Screenshot of app.js code for TeamProfileGenerator](/Images/TeamProfileGenerator-Pic1.png)
