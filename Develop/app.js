@@ -90,40 +90,40 @@ const teamQuestions = [{
     choices: ["intern", "engineer", "I have added all team members!"]
 }]
 
-function managerInfo() {
+function managerCreate() {
     inquirer.prompt(managerQuestions)
         .then(responses => {
 
             const manager = new Manager(responses.managerName, responses.managerID, responses.managerEmail, responses.managerOfficeNumber)
-            console.log("New manager", manager)
+
             team.push(manager);
+
             createTeam();
         })
 };
 
-managerInfo();
+managerCreate();
 
-function engineerFunction() {
+function engineerCreate() {
     inquirer.prompt(engineerQuestions)
         .then(responses => {
 
             const engineer = new Engineer(responses.engineerName, responses.engineerID, responses.engineerEmail, responses.engineerGithub)
 
-            console.log("New engineer", engineer)
-
             team.push(engineer);
+
             createTeam();
         })
 }
 
-function internFunction() {
+function internCreate() {
     inquirer.prompt(internQuestions)
         .then(responses => {
 
             const intern = new Intern(responses.internName, responses.internID, responses.internEmail, responses.internSchool)
-            console.log("New intern", intern)
 
             team.push(intern);
+            
             createTeam();
         })
 }
@@ -136,11 +136,11 @@ function createTeam() {
             switch (teamRes.employeeType) {
 
                 case "engineer":
-                    engineerFunction();
+                    engineerCreate();
                     break;
 
                 case "intern":
-                    internFunction();
+                    internCreate();
                     break;
 
                 default:
